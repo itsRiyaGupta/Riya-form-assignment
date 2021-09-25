@@ -9,6 +9,17 @@ const FormSignup = ({ states,submitForm }) => {
     validate
   );
 
+  const [state,setState] = useState(0);
+  const [districtName,setDistrictName] = useState(state)
+
+  const stateChange = (e)=>{
+      setState(e.target.value)
+  }
+
+  const districtChange= (e)=>{
+      setDistrictName(e.target.value)
+  }
+
     return (
     <div>
       <form onSubmit={handleSubmit} className='form' noValidate>
@@ -90,6 +101,32 @@ const FormSignup = ({ states,submitForm }) => {
             onChange={handleChange}
           />
           {errors.dob && <p>{errors.dob}</p>}
+        </div>
+
+        <div className='form-inputs'>
+          <label className='form-label'>State</label>
+          <select id="state" onChange={stateChange}>
+                {
+                    states.map((state, id)=>{
+                        return(
+                        <option key={id} value={id}>{state.name}</option>
+                        )
+                    })
+                }
+            </select>
+        </div>
+        
+        <div className='form-inputs'>
+          <label className='form-label'>District</label>
+          <select id="state" onChange={districtChange}>
+                {
+                    states[state].districts.map((district, id)=>{
+                        return(
+                        <option key={id} value={id}>{district.name}</option>
+                        )
+                    })
+                }
+            </select>
         </div>
 
         <button className='form-input-btn' type='submit'>
