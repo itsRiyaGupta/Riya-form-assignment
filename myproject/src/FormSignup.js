@@ -28,6 +28,19 @@ const FormSignup = ({ states,submitForm }) => {
           {errors.firstname && <p>{errors.firstname}</p>}
         </div>
 
+        {/* // lastname starts here */}
+        <div className='form-inputs'>
+          <label className='form-label'>Last Name</label>
+          <input
+            className='form-input'
+            type='text'
+            name='lastname'
+            placeholder='Enter your lastname'
+            value={values.lastname}
+            onChange={handleChange}
+          />
+          {errors.lastname && <p>{errors.lastname}</p>}
+        </div>
         
         <button className='form-input-btn' type='submit'>
           Register
