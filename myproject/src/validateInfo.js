@@ -26,5 +26,11 @@ export default function validateInfo(values) {
       if(!values.gender){
         errors.gender = "this field is mandatory"
     }
+
+    if (!values.email) {
+        errors.email = 'Email is mandatory';
+      } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+        errors.email = 'Email address is invalid';
+      }
     return errors;
   }

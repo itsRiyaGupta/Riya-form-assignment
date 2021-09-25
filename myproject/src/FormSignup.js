@@ -64,6 +64,20 @@ const FormSignup = ({ states,submitForm }) => {
         {errors.gender && <p>{errors.gender}</p>}
         </div>
 
+        {/* email */}
+        <div className='form-inputs'>
+          <label className='form-label'>Email</label>
+          <input
+            className='form-input'
+            type='email'
+            name='email'
+            placeholder='Enter your email'
+            value={values.email}
+            onChange={handleChange}
+          />
+          {errors.email && <p>{errors.email}</p>}
+        </div>
+        
         <button className='form-input-btn' type='submit'>
           Register
         </button>
