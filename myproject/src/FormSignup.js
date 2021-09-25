@@ -104,6 +104,19 @@ const FormSignup = ({ states,submitForm }) => {
         </div>
 
         <div className='form-inputs'>
+          <label className='form-label'>Mobile</label>
+          <input
+            className='form-input'
+            type='tel'
+            name='phone'
+            placeholder='Enter your Phone Num'
+            value={values.phone}
+            onChange={handleChange}
+          />
+          {errors.phone && <p>{errors.phone}</p>}
+        </div>
+
+        <div className='form-inputs'>
           <label className='form-label'>State</label>
           <select id="state" onChange={stateChange}>
                 {

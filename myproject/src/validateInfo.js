@@ -37,5 +37,17 @@ export default function validateInfo(values) {
         errors.dob = "this field is mandatory"
     }
 
+    if(!values.phone){
+        errors.phone = "";
+    }else if(values.phone.match(/[6-9]{1}[0-9]{9}/)){
+        if(values.phone.length<10){
+            errors.phone = "Phone number must be of length 10 digits"
+        }else{
+            errors.phone = ''
+        }
+    }else{
+        errors.phone = "Only numbers are accepted"
+    }
+
     return errors;
   }
