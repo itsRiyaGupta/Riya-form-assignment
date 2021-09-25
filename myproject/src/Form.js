@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import './Form.css';
 import FormSignup from './FormSignup';
+import FormSuccess from './FormSuccess';
 
 const states = [
     {
@@ -90,11 +91,21 @@ const states = [
 ];
 
 const Form = () => {
- 
+    
+        const [isSubmitted, setIsSubmitted] = useState(false);
+      
+        function submitForm() {
+          setIsSubmitted(true);
+        }
   return (
     <>
       <div className='form-container'> 
-          <FormSignup states={states}/>
+          {/* <FormSignup states={states}/> */}
+          {!isSubmitted ? (
+          <FormSignup submitForm={submitForm} states={states}/>
+        ) : (
+          <FormSuccess />
+        )}
       </div>
     </>
   );

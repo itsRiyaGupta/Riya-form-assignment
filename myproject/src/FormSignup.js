@@ -23,27 +23,29 @@ const FormSignup = ({ states,submitForm }) => {
     return (
     <div>
       <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
+        <h3 className="text-center">
          User Registration
-        </h1>
-        <div className='form-inputs'>
-          <label className='form-label'>First Name</label>
+        </h3>
+        <div>
+        <div className="d-flex">
+        <div>
+          <label className=''>First Name</label>
           <input
-            className='form-input'
+            className='form-input d-block'
             type='text'
             name='firstname'
             placeholder='Enter your firstname'
             value={values.firstname}
             onChange={handleChange}
           />
-          {errors.firstname && <p>{errors.firstname}</p>}
+          {errors.firstname && <p className="text-small">{errors.firstname}</p>}
         </div>
 
         {/* // lastname starts here */}
         <div className='form-inputs'>
           <label className='form-label'>Last Name</label>
           <input
-            className='form-input'
+            className='form-input d-block'
             type='text'
             name='lastname'
             placeholder='Enter your lastname'
@@ -52,13 +54,14 @@ const FormSignup = ({ states,submitForm }) => {
           />
           {errors.lastname && <p>{errors.lastname}</p>}
         </div>
-        
+        </div>
         {/* gender  */}
+        <div className="d-flex">
         <div className='form-inputs'>
         <label className='form-label'>Gender</label>
         <div className="form-label">Male</div>
         <input
-            className='form-input'
+            className='form-input d-block'
             type='radio'
             name='gender'
             value="Male"
@@ -76,10 +79,11 @@ const FormSignup = ({ states,submitForm }) => {
         </div>
 
         {/* email */}
+       
         <div className='form-inputs'>
           <label className='form-label'>Email</label>
           <input
-            className='form-input'
+            className='form-input d-block'
             type='email'
             name='email'
             placeholder='Enter your email'
@@ -88,12 +92,14 @@ const FormSignup = ({ states,submitForm }) => {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
+        </div>
 
         {/* DOB */}
+        <div className="d-flex">
         <div className='form-inputs'>
           <label className='form-label'>Date of birth</label>
           <input
-            className='form-input'
+            className='form-input d-block'
             type='date'
             name='dob'
             placeholder='Enter your DOB'
@@ -102,11 +108,12 @@ const FormSignup = ({ states,submitForm }) => {
           />
           {errors.dob && <p>{errors.dob}</p>}
         </div>
+        
 
         <div className='form-inputs'>
           <label className='form-label'>Mobile</label>
           <input
-            className='form-input'
+            className='form-input d-block'
             type='tel'
             name='phone'
             placeholder='Enter your Phone Num'
@@ -115,10 +122,12 @@ const FormSignup = ({ states,submitForm }) => {
           />
           {errors.phone && <p>{errors.phone}</p>}
         </div>
+        </div>
 
+        <div className="d-flex">
         <div className='form-inputs'>
           <label className='form-label'>State</label>
-          <select id="state" onChange={stateChange}>
+          <select id="state" className="d-block" onChange={stateChange}>
                 {
                     states.map((state, id)=>{
                         return(
@@ -131,7 +140,7 @@ const FormSignup = ({ states,submitForm }) => {
         
         <div className='form-inputs'>
           <label className='form-label'>District</label>
-          <select id="state" onChange={districtChange}>
+          <select id="state" className="d-block" onChange={districtChange}>
                 {
                     states[state].districts.map((district, id)=>{
                         return(
@@ -141,12 +150,13 @@ const FormSignup = ({ states,submitForm }) => {
                 }
             </select>
         </div>
+        </div>
 
         <div className='form-inputs'>
             <label className='form-label'>Address</label>
             <textarea
                 placeholder='Fill in address'
-                value={values.address}
+                className="d-block" value={values.address}
                 onChange={handleChange}
                 name="address"
             ></textarea>
@@ -156,9 +166,10 @@ const FormSignup = ({ states,submitForm }) => {
         <button className='form-input-btn' type='submit'>
           Register
         </button>
-
+        </div>
       </form>
     </div>
+    
   );
 };
 
