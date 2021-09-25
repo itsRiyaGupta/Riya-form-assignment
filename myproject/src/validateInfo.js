@@ -32,5 +32,10 @@ export default function validateInfo(values) {
       } else if (!/\S+@\S+\.\S+/.test(values.email)) {
         errors.email = 'Email address is invalid';
       }
+
+      if(!values.dob){
+        errors.dob = "this field is mandatory"
+    }
+
     return errors;
   }

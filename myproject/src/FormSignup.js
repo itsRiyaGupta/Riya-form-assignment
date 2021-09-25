@@ -77,7 +77,21 @@ const FormSignup = ({ states,submitForm }) => {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
-        
+
+        {/* DOB */}
+        <div className='form-inputs'>
+          <label className='form-label'>Date of birth</label>
+          <input
+            className='form-input'
+            type='date'
+            name='dob'
+            placeholder='Enter your DOB'
+            value={values.dob}
+            onChange={handleChange}
+          />
+          {errors.dob && <p>{errors.dob}</p>}
+        </div>
+
         <button className='form-input-btn' type='submit'>
           Register
         </button>
