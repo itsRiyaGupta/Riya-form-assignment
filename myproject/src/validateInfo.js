@@ -49,5 +49,11 @@ export default function validateInfo(values) {
         errors.phone = "Only numbers are accepted"
     }
 
+    if(!values.address){
+        errors.address=''
+    }else if(values.address.length>500){
+        errors.address = "Max limit is 500 characters"
+    }
+
     return errors;
   }

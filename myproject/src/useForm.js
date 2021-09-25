@@ -8,6 +8,7 @@ const useForm = (callback, validate) => {
     email:'',
     dob:'',
     phone:'',
+    address:'',
   });
 
   const [errors, setErrors] = useState({});

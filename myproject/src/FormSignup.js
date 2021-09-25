@@ -142,6 +142,17 @@ const FormSignup = ({ states,submitForm }) => {
             </select>
         </div>
 
+        <div className='form-inputs'>
+            <label className='form-label'>Address</label>
+            <textarea
+                placeholder='Fill in address'
+                value={values.address}
+                onChange={handleChange}
+                name="address"
+            ></textarea>
+            {errors.address && <p>{errors.address}</p>}
+        </div>
+
         <button className='form-input-btn' type='submit'>
           Register
         </button>
