@@ -23,5 +23,8 @@ export default function validateInfo(values) {
           errors.lastname = 'Only alphabets are allowed';
       }
 
+      if(!values.gender){
+        errors.gender = "this field is mandatory"
+    }
     return errors;
   }

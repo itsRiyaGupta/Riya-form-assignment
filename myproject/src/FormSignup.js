@@ -42,12 +42,32 @@ const FormSignup = ({ states,submitForm }) => {
           {errors.lastname && <p>{errors.lastname}</p>}
         </div>
         
+        {/* gender  */}
+        <div className='form-inputs'>
+        <label className='form-label'>Gender</label>
+        <div className="form-label">Male</div>
+        <input
+            className='form-input'
+            type='radio'
+            name='gender'
+            value="Male"
+            onChange={handleChange}
+        />
+        <div className="form-label">Female</div>
+        <input
+            className='form-input'
+            type='radio'
+            name='gender'
+            value="Female"
+            onChange={handleChange}
+        />
+        {errors.gender && <p>{errors.gender}</p>}
+        </div>
+
         <button className='form-input-btn' type='submit'>
           Register
         </button>
 
-        
-   
       </form>
     </div>
   );
